@@ -1,91 +1,51 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body{
+	background:#000;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:100vh;
 }
 
-.hero {
-  height: 100vh;
-  width: 100%;
-  background-image: url('../Images/Profile.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* optional: parallax effect */
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  /* Blue fog overlay */
-  position: relative;
+.flame{
+	width:150px;
+	height:150px;
+	background:linear-gradient(-45deg, red, orange);
+	border-radius: 150px 150px 0px 150px;
+	transform:rotate(-135deg);
+	animation:4s flame infinite;
+	filter:blur(10px);
+	position:relative;
+	box-shadow:17px 20px 90px #700;
+	border:45px solid black;
+	border-left-width:25px;
+	border-top-width:25px;
+	pointer-events: none;
+	z-index: -1;
+	
+	&:after,
+	&:before{
+		content:'';
+		width:100px;
+		height:100px;
+		display:block;
+		position:absolute;
+		background:linear-gradient(-45deg, red, orange);
+		animation:.5s flame infinite;
+		transform:scale(.8) rotate(20deg);
+		border-radius: 100px 100px 0px 100px;
+		top:20px;
+	}
+	&:before{
+		top:0;
+		animation-duration:2s;
+		transform:scale(.9) rotate(-15deg) translate(10px, 0px);
+	}
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 30, 80, 0.6); /* blue fog tint */
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: #cce6ff;
-  font-family: 'Courier New', monospace;
-}
-
-.terminal {
-  font-size: 0.9rem;
-  opacity: 0.7;
-  margin-bottom: 1rem;
-}
-
-.hero h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  letter-spacing: 0.5rem;
-  text-shadow: 0 0 30px #0055ff;
-  margin-bottom: 1rem;
-}
-
-.role {
-  font-size: 1.2rem;
-  opacity: 0.8;
-  margin-bottom: 2rem;
-  display: block;
-}
-
-.buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.btn, .btn-outline {
-  padding: 0.75rem 2rem;
-  text-decoration: none;
-  font-family: inherit;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-.btn {
-  background: #0055ff;
-  color: white;
-}
-
-.btn-outline {
-  border: 1px solid #cce6ff;
-  color: #cce6ff;
-}
-
-.btn:hover {
-  background: #0044cc;
-}
-
-.btn-outline:hover {
-  background: rgba(204, 230, 255, 0.1);
+@keyframes flame{
+  0% {height:150px; width:150px;}
+	25% {height:170px; width:160px;}
+  50% {height:140px; width:140px;}
+	75% {height:180px; width:180px;}
+  100% {height:150px; width:150px;}
 }
