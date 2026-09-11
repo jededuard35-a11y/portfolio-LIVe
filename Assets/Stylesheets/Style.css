@@ -4,6 +4,7 @@ body{
 	justify-content:center;
 	align-items:center;
 	height:100vh;
+	position:relative;
 }
 /*Flame*/
 .flame{
@@ -20,7 +21,11 @@ body{
 	border-left-width:25px;
 	border-top-width:25px;
 	pointer-events: none;
-	z-index: -1;
+	z-index: 0;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-120px 0 0 -120px;
 	
 	&:after,
 	&:before{
@@ -34,6 +39,7 @@ body{
 		transform:scale(.8) rotate(20deg);
 		border-radius: 100px 100px 0px 100px;
 		top:20px;
+		filter:blur(10px);
 	}
 	&:before{
 		top:0;
@@ -50,6 +56,18 @@ body{
   100% {height:150px; width:150px;}
 }
 /*Flame End*/
+
+/* Content */
+.content{
+	position: relative;
+	z-index: 1;
+	color: white;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, .95), 0 0 12px rgba(0, 0, 0, .8);
+}
+
+.content a{
+	color: inherit;
+}
 
 /* Home */
 .Home{
