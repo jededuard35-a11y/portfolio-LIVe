@@ -1,10 +1,12 @@
+@import "tailwindcss";
+
 body{
 	background:#000;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	height:100vh;
+	min-height:100vh;
 	position:relative;
+	box-sizing:border-box;
+	margin: 0;
+	padding: 0;
 }
 /*Flame*/
 .flame{
@@ -22,7 +24,7 @@ body{
 	border-top-width:25px;
 	pointer-events: none;
 	z-index: 0;
-	position:absolute;
+	position:fixed;
 	left:50%;
 	top:50%;
 	margin:-120px 0 0 -120px;
@@ -57,20 +59,4 @@ body{
 }
 /*Flame End*/
 
-/* Content */
-.content{
-	position: relative;
-	z-index: 1;
-	color: white;
-	text-shadow: 0 2px 4px rgba(0, 0, 0, .95), 0 0 12px rgba(0, 0, 0, .8);
-}
 
-.content a{
-	color: inherit;
-}
-
-/* Home */
-.Home{
-  text-align: center;
-  color: white;
-}
