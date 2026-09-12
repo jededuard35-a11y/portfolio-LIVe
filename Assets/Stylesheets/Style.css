@@ -1,4 +1,9 @@
 @import "tailwindcss";
+
+html {
+	scroll-behavior: smooth;
+}
+
 /*Flame*/
 .flame{
 	width:150px;
@@ -50,4 +55,34 @@
 }
 /*Flame End*/
 
+#navbar {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: grey;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
 
