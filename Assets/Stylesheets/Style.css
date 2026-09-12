@@ -1,13 +1,4 @@
 @import "tailwindcss";
-
-body{
-	background:#000;
-	min-height:100vh;
-	position:relative;
-	box-sizing:border-box;
-	margin: 0;
-	padding: 0;
-}
 /*Flame*/
 .flame{
 	width:150px;
@@ -23,7 +14,7 @@ body{
 	border-left-width:25px;
 	border-top-width:25px;
 	pointer-events: none;
-	z-index: 0;
+	z-index: -1;
 	position:fixed;
 	left:50%;
 	top:50%;
